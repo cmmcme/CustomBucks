@@ -2,6 +2,19 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.bg-mainColor {
+  background-color: #007042;
+  border-color: #030033;
+}
+
+.bg-white {
+  background: white;
+}
+
+.bg-white:hover {
+  background: white;
+}
+
 a {
   color: #00B7FF;
 }
