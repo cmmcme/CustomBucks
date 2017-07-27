@@ -1,25 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-var viewPath = 'partials/kinds/';
+var viewPath = 'partials/menu/';
 
-router.get('/', function(req, res, next) {
+router.get('/:kind', function(req, res, next) {
+    let kind = req.params.kind;
 
-    // TODO::디비에서 데이터를 가져오는걸로 바꾸어야함
-    let kinds = [
-        {
-            title: '콜드 브루'
-        },
-        {
-            title: '프라푸치노'
-        }
-    ];
-    res.render(viewPath + 'view', {
-        kinds: kinds
-    });
-});
-
-router.get('/:kind/menu', function(req, res, next) {
     // TODO::디비에서 데이터를 가져오는걸로 바꾸어야함
    let menus = [
        {
@@ -29,9 +15,24 @@ router.get('/:kind/menu', function(req, res, next) {
            title: '에스프레소'
        }
    ];
-   res.render(viewPath + 'menu/view', {
+   res.render(viewPath + 'list', {
+       kind: kind,
        menus: menus
    });
+});
+
+router.get('/:kind/:menu', function(req, res, next) {
+    let kind = req.params.kind;
+    let menu = req.params.menu;
+
+    res.render(viewPath + 'view', {
+        kind: kind,
+        menu: menu
+    });
+});
+
+router.get('/:kind/:menu/new', function(req, res, next) {
+   res.render(viewPath + 'new');
 });
 
 module.exports = router;

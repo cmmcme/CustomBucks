@@ -3,7 +3,7 @@
 <div class="row">
     {{#each menus}}
         <div class="col-sm-6 col-md-4">
-            <a href="/kinds/1/menu" class="thumbnail">
+            <a href="/menu/{{@root.kind}}/{{this.title}}" class="thumbnail">
                 <h3 class="text-center">{{this.title}}</h3>
             </a>
         </div>
