@@ -5,11 +5,15 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var hbs = require('hbs');
+var db = require('./lib/repository/db');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 var kind = require('./routes/kind');
 var menu = require('./routes/menu');
+
+// connect mongo db
+db();
 
 var app = express();
 

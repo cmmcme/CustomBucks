@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+// var Menu = require('model/menu');
 
 var viewPath = 'partials/menu/';
 
