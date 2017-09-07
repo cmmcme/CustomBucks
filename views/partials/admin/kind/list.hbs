@@ -1,0 +1,11 @@
+<h1>Admin kind list</h1>
+
+<div class="row">
+    {{#each kinds}}
+        <div class="col-sm-6 col-md-4">
+            <a href="kind/{{this.title}}" class="thumbnail text-center">
+                {{this.title}}
+            </a>
+        </div>
+    {{/each}}
+</div>
